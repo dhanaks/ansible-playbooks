@@ -1,0 +1,10 @@
+--- # user creation
+- name: my test playbook
+  hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: creating user
+      user: name=rohit

@@ -1,0 +1,15 @@
+--- # install multiple packages in a loops format
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: install multiple packages
+      yum: name='{{item}}' state=installed
+      with_items:
+        - git
+        - httpd
+        - docker
+        - java
+        - mysql

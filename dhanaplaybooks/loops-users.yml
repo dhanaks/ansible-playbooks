@@ -1,0 +1,14 @@
+--- # creaiong multiple users
+- hosts: all
+  user: ansible
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: creationg multiple users
+      user: name='{{item}}' state=present
+      with_items:
+        - Dhana
+        - Harikrishna
+        - Bujji
+

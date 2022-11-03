@@ -1,0 +1,8 @@
+--- # this is a demo playbook
+- hosts: webservers
+  tasks: 
+    -name: installing tree on webservers
+     action: yum pkg=tree state=installed
+    -name: installing mysql on dbservers
+     action: yum pkg=mysql state=installed
+

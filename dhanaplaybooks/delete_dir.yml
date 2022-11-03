@@ -1,0 +1,12 @@
+--- # directory deletion
+- hosts: all
+  user: ansible
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: deleting directory
+      file:
+        path: /home/ansible/haridir
+        state: absent
+

@@ -1,0 +1,13 @@
+--- # directory creation
+- name: my test playbook
+  hosts: webservers
+  user: ansible
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: creating a directory
+      file:
+        path: /home/ansible/haridir
+        state: directory
+

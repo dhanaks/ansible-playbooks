@@ -1,0 +1,14 @@
+--- # conditionals playbook
+- name: my conditionals playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: installing apache for debian
+      command: apt-get install apache -y
+      when: ansible_os_family == "Debian"
+
+    - name: installing httpd for redhat
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"
+

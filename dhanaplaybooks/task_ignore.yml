@@ -1,0 +1,9 @@
+--- # this is my ignore_errors playbook
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: installing httpd in webservers
+      action: yum name=htt state=installed
+      ignore_errors: yes

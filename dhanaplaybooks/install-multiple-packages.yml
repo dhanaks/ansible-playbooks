@@ -1,0 +1,11 @@
+--- # install multiple packages
+- name: installing multiple packages
+  hosts: all
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: install multiple packages
+      yum:
+        name: ['git','httpd','docker','tree','java','mysql','which','wget']
+        state: installed
